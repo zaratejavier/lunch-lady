@@ -25,10 +25,12 @@ class LunchLady
   # end
 
   def print_side
-    @side_dishes.each do |dish|
-      puts dish.info
+    @side_dishes.each_with_index do |dish, index|
+      puts "#{index +1}) #{dish.info}"
     end
   end
+
+
 
   def menu
     puts "What is your name?"
@@ -39,8 +41,39 @@ class LunchLady
 
     puts "Choose your main dish"
     print_main
+    case gets.to_i
+    when 1
+      @user_main = @main_dishes[0]
+    when 2
+      @user_main = @main_dishes[1]
+    when 3
+      @user_main = @main_dishes[2]
+    when 4
+      @user_main = @main_dishes[3]
+    else
+      puts "invalid input"
+      
   end
+  puts "--------------------#{@user_main.name}"
 end
+
+#     puts "Choose your side dish"
+#     print_side
+#     case gets.to_i
+#     when 1
+#       @user_main = @side_dishes[0]
+#     when 2
+#       @user_main = @side_dishes[1]
+#     when 3
+#       @user_main = @side_dishes[2]
+#     else
+#       puts "invalid input"
+      
+#   end
+#   puts "--------------------#{@user_main.name}"
+
+end
+
 
 food = LunchLady.new
 food.menu
