@@ -1,25 +1,13 @@
-class Main_dish
-  def initialize(dish, price)
-    @dish = dish
-    @price = price
-    end
-
-    def print 
-      puts "Main dish: #{@dish}- Price #{@price}"
-    end
-end
-
-meatloaf = Main_dish.new("Meatloaf", 5)
-tacos = Main_dish.new("Tacos", 3)
-casserole = Main_dish.new("Casseroles", 4)
-meatloaf.print
-
-
-class Side_dish < Main_dish
-  def print 
-    puts "side dish: #{@dish}- Price #{@price}"
+require_relative './main_dish.rb' 'side_dish'
+class LunchLady
+  def intialize
+    @main_dishes = [
+      MainDish.new('Meatloaf', 5),
+      MainDish.new('Tacos', 3),
+      MainDish.new('Casserole', 6),
+      MainDish.new('Burger', 4),
   end
-end
+  # all your other stuff in here - like get user
 
-beans = Side_dish.new("beans", 4)
-beans.print
+  # @main_dish.each do ||
+end
