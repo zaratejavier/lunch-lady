@@ -1,4 +1,4 @@
-class MainDish
+class SecondSide
   def  initialize(dish, price)
     @dish = dish
     @price = price
@@ -9,4 +9,3 @@ class MainDish
   end
  
 end
-

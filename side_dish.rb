@@ -6,7 +6,4 @@ class SideDish
   def info
     return "#{@dish} - $#{@price}"
   end
-  def name
-    return "#{@dish}"
-  end
 end
