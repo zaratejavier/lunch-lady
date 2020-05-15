@@ -20,17 +20,11 @@ class LunchLady
     end
   end
 
-  # @contact.each_with_index do |cont, index|
-  #   puts "#{index + 1}) #{cont[:name].split.map(&:capitalize).join(' ')}"
-  # end
-
   def print_side
     @side_dishes.each_with_index do |dish, index|
       puts "#{index +1}) #{dish.info}"
     end
   end
-
-
 
   def menu
     puts "What is your name?"
@@ -52,28 +46,28 @@ class LunchLady
       @user_main = @main_dishes[3]
     else
       puts "invalid input"
-      
   end
-  puts "--------------------#{@user_main.name}"
+  
+  puts "-------#{@user_main.name}---------"
+  the_sides
 end
 
-#     puts "Choose your side dish"
-#     print_side
-#     case gets.to_i
-#     when 1
-#       @user_main = @side_dishes[0]
-#     when 2
-#       @user_main = @side_dishes[1]
-#     when 3
-#       @user_main = @side_dishes[2]
-#     else
-#       puts "invalid input"
-      
-#   end
-#   puts "--------------------#{@user_main.name}"
-
+def the_sides
+    puts "Choose your side dish"
+    print_side
+    case gets.to_i
+    when 1
+      @user_main = @side_dishes[0]
+    when 2
+      @user_main = @side_dishes[1]
+    when 3
+      @user_main = @side_dishes[2]
+    else
+      puts "invalid input"
+  end
+  puts "---------#{@user_main.name}---------"
 end
 
-
+end
 food = LunchLady.new
 food.menu
